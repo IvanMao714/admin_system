@@ -15,3 +15,4 @@ CREATE TABLE T_USER (
 -- Records of T_USER
 -- ----------------------------
 INSERT INTO T_USER VALUES ('1', 'ivan120714', '120714', 'maoyifan714@gmail.com',STR_TO_DATE('2023-06-22 17:20:21', '%Y-%m-%d %H:%i:%s'), '1');
+INSERT INTO T_USER VALUES ('2', 'ivan', '120714', 'maoyifan@gmail.com',STR_TO_DATE('2023-06-24 17:20:21', '%Y-%m-%d %H:%i:%s'), '1');
