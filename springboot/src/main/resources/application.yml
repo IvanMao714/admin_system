@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://8.219.62.112:3306/admin_system?useUnicode=true&characterEncoding=UTF-8
+    username: admin_system
+    password: 120714
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    user:
+      name: ivan
+      password: 123456
+      roles: admin
+
+server:
+  port: 80

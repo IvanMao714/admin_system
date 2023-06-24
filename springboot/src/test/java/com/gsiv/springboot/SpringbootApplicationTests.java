@@ -1,10 +1,10 @@
-package com.kyiv.admin_system;
+package com.gsiv.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AdminSystemApplicationTests {
+class SpringbootApplicationTests {
 
     @Test
     void contextLoads() {

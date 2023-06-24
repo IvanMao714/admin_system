@@ -1,13 +1,13 @@
-package com.kyiv.admin_system;
+package com.gsiv.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AdminSystemApplication {
+public class SpringbootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AdminSystemApplication.class, args);
+        SpringApplication.run(SpringbootApplication.class, args);
     }
 
 }
