@@ -1,29 +1,14 @@
-# vue
+## 登录注册页面模板
 
-This template should help get you started developing with Vue 3 in Vite.
+- Vue3
+- Element-Plus
+- FontAwesome
+- axios
 
-## Recommended IDE Setup
+![登录页面](preview/login.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+![注册页面](preview/signup.png)
 
-## Customize configuration
+<img src="preview/mobile.png" height="400px"></img>
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+源自 [LoginRadius/awesome-login-pages](https://github.com/LoginRadius/awesome-login-pages) 的 `login-form-v34` 修改而成
