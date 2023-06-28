@@ -1,3 +1,112 @@
+<script>
+export default {
+  data() {
+    return {
+      signUpMode: false,
+    };
+  },
+  methods: {
+    signUp() {
+      this.signUpMode = true;
+    },
+    signIn() {
+      this.signUpMode = false;
+    },
+  },
+};
+</script>
+
+<template>
+  <div class="container" :class="{ 'sign-up-mode': signUpMode }">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <input type="submit" value="Login" class="btn solid" />
+          <p class="social-text">Or Sign in with social platforms</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </form>
+        <form action="#" class="sign-up-form">
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <input type="submit" class="btn" value="Sign up" />
+          <p class="social-text">Or Sign up with social platforms</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here ?</h3>
+          <p>Enter your details and start your journey with us</p>
+          <button class="btn transparent" id="sign-up-btn" @click="signUp">
+            Sign up
+          </button>
+        </div>
+        <img src="../img/log.svg" class="image" alt="" />
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us ?</h3>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="btn transparent" id="sign-in-btn" @click="signIn">
+            Sign in
+          </button>
+        </div>
+        <img src="../img/log.svg" class="image" alt="" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
@@ -102,21 +211,6 @@ form.sign-in-form {
   font-weight: 500;
 }
 
-.input-field .el-input input {
-  background: none;
-  outline: none;
-  border: none;
-  line-height: 1;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.input-field .el-input input::placeholder {
-  color: #aaa;
-  font-weight: 500;
-}
-
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
@@ -165,7 +259,6 @@ form.sign-in-form {
 .btn:hover {
   background-color: #4d84e2;
 }
-
 .panels-container {
   position: absolute;
   height: 100%;
@@ -201,7 +294,6 @@ form.sign-in-form {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
-  align-items: center;
   text-align: center;
   z-index: 6;
 }
@@ -241,11 +333,6 @@ form.sign-in-form {
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
-}
-
-.btn.transparent:hover {
-  background: #fff;
-  color: #5995fd;
 }
 
 .right-panel .image,
@@ -297,7 +384,6 @@ form.sign-in-form {
     min-height: 800px;
     height: 100vh;
   }
-
   .signin-signup {
     width: 100%;
     top: 95%;
@@ -404,11 +490,9 @@ form.sign-in-form {
   .image {
     display: none;
   }
-
   .panel .content {
     padding: 0.5rem 1rem;
   }
-
   .container {
     padding: 1.5rem;
   }
@@ -423,3 +507,4 @@ form.sign-in-form {
     left: 50%;
   }
 }
+</style>
