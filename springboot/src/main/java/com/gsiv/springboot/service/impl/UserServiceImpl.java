@@ -4,6 +4,7 @@ import com.gsiv.springboot.entity.User;
 import com.gsiv.springboot.mapper.UserMapper;
 import com.gsiv.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,5 +26,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> listUsers() {
         return userMapper.listUsers();
+    }
+
+    public User loadUsername(String username) throws UsernameNotFoundException{
+        User user = userMapper.findbyUsername(username);
+        if(user == null){
+            throw new UsernameNotFoundException("用户不存在");
+        }
+        return user;
     }
 }

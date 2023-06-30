@@ -8,4 +8,6 @@ public interface UserService {
 
     List<User> listUsers();
 
+    User loadUsername(String username);
+
 }
