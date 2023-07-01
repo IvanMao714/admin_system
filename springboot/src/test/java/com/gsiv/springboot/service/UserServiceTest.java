@@ -30,10 +30,10 @@ public class UserServiceTest {
         user.forEach(System.out::println);
     }
 
-    @Test
-    void LoadbynameTest() {
-        User user = userService.loadUsername("ivan120714");
-        System.out.println(user.toString());
-    }
+//    @Test
+//    void LoadByNameTest() {
+//        User user = userService.loadUserByUsername("ivan120714");
+//        System.out.println(user.toString());
+//    }
 
 }

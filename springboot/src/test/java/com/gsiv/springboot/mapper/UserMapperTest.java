@@ -30,4 +30,10 @@ public class UserMapperTest {
         }
     }
 
+    @Test
+    void findByUsername(){
+        User user = userMapper.findByUsername("ivan120714");
+        System.out.println(user.toString());
+    }
+
 }

@@ -15,7 +15,7 @@ public interface UserMapper {
     List<User> listUsers();
 
     @Select("select username, passwd from T_USER where username=#{username}")
-    User findbyUsername(String username);
+    User findByUsername(String username);
 
 
 
