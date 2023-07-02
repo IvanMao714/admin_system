@@ -19,15 +19,15 @@ import java.util.List;
  * @version: 1.0
  */
 
-@RestController
-@RequestMapping("/user")
-public class UserController {
-
-    @Autowired
-    UserService userService;
-
-    @GetMapping("/list")
-    public List<User> listUsers(){
-        return userService.listUsers();
-    }
-}
+//@RestController
+//@RequestMapping("/user")
+//public class UserController {
+//
+//    @Autowired
+//    UserService userService;
+//
+//    @GetMapping("/list")
+//    public List<User> listUsers(){
+//        return userService.listUsers();
+//    }
+//}

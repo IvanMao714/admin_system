@@ -7,6 +7,7 @@ import com.gsiv.springboot.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.testng.annotations.Test;
 
 /**
@@ -23,10 +24,11 @@ import org.testng.annotations.Test;
 public class UserDetailsServiceTest {
     @Autowired
     UserDetailsServiceImpl userService;
+    //null 的原因是被Security使用了
 
     @Test
     void LoadByNameTest() {
-        UserDetails user = userService.loadUserByUsername("ivan120714");
+        UserDetails user = userService.loadUserByUsername("ivan");
         System.out.println(user.toString());
     }
 

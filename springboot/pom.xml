@@ -103,6 +103,12 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.0</version>
         </dependency>
+        <!--主要是 因为 Spring Boot 版本过高了，需要我们给它指定「jaxb」的版本      -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
 
         <!-- 单元测试Junit -->
         <dependency>
