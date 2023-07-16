@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Objects;
 
+import static java.util.concurrent.TimeUnit.MINUTES;
+
 /**
  * @projectName: admin_system
  * @package: com.gsiv.springboot.service.impl
@@ -56,7 +58,7 @@ public class LoginServiceImpl implements LoginService {
         HashMap<String,String> map = new HashMap<>();
         map.put("token",jwt);
         //authenticate存入redis
-        redisCache.setCacheObject("login:"+userId,loginUser);
+        redisCache.setCacheObject("login:"+userId,loginUser,111111,MINUTES);
         return new ResponseResult(200, "登录成功", map);
     }
 }
