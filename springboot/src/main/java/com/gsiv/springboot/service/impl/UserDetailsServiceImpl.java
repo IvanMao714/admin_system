@@ -35,9 +35,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         User user = userMapper.findByUsername(username);
 //        System.out.println(passwordEncoder.encode(user.getPasswd()));
-//        System.out.println(passwordEncoder.matches("120714", user.getPasswd()));
-//
-//        user.setPasswd(passwordEncoder.encode(user.getPasswd()));
+//        System.out.println("encode:" + passwordEncoder.matches("120714", user.getPasswd()));
+////
+//        System.out.println(passwordEncoder.encode("120714"));
 
         if(user == null){
             throw new UsernameNotFoundException("用户不存在");
