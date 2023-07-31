@@ -22,6 +22,7 @@ public class LoginController {
     private LoginService loginService;
 
     @PostMapping("/login")
+    @CrossOrigin(origins = {"*"})
     public ResponseResult login(@RequestBody User user){
         //登录
         return loginService.login(user);
@@ -31,6 +32,13 @@ public class LoginController {
     public ResponseResult logout(){
         return loginService.logout();
 
+    }
+
+    @PostMapping("/register")
+    @CrossOrigin(origins = {"*"})
+    public ResponseResult register(@RequestBody User user){
+        System.out.println(11111);
+        return loginService.register(user.getUsername(), user.getPassword(), user.getEmail());
     }
 
 }

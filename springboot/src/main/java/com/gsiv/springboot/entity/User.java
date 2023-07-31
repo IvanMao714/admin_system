@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.io.Serializable;
 import java.sql.Time;
-
+import java.util.Date;
 
 
 //@Data 减少模板代码
@@ -15,15 +15,15 @@ public class User implements Serializable{
 //一个类只有实现了 Serializable 接口，它的对象才是可序列化的  ->  从对象到 Json 字符串的转换过程就是序列化的过程
 private static final long serialVersionUID = 3497935890426858541L;
 
-	private Integer id;
+	private String id;
 
-	private String userName;
+	private String username;
 
-	private String passwd;
+	private String password;
 
 	private String email;
 
-	private Time create_time;
+	private Date create_time;
 
 	private char status;
 
@@ -43,8 +43,8 @@ private static final long serialVersionUID = 3497935890426858541L;
 	public String toString() {
 		return "User{" +
 				"id=" + id +
-				", userName='" + userName + '\'' +
-				", password='" + passwd + '\'' +
+				", username='" + username + '\'' +
+				", password='" + password + '\'' +
 				", email='" + email + '\'' +
 				", createTime=" + create_time +
 				", status=" + status +

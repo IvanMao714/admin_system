@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.rmi.server.UID;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,6 +36,13 @@ public class UserMapperTest {
     void findByUsername(){
         User user = userMapper.findByUsername("ivan");
         System.out.println(user.toString());
+    }
+
+    @Test
+    void insertUserTest(){
+        Date date = new Date(System.currentTimeMillis());
+        userMapper.insertUser("ivan", "mao", "651519611@qq.com", date, '1');
+
     }
 
 }

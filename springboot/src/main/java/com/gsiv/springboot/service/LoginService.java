@@ -18,4 +18,6 @@ public interface LoginService {
     ResponseResult login(User user);
 
     ResponseResult logout();
+
+    ResponseResult register(String username, String password, String email);
 }
