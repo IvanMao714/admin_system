@@ -5,17 +5,17 @@
 <!--    登陆表单-->
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form" :model="user" >
+        <form action="#" class="sign-in-form" :model="loginData" >
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" v-model="loginData.username" placeholder="Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" v-model="loginData.password" placeholder="Password" />
           </div>
-          <input type="submit" value="Login" class="btn solid" />
+          <input type="submit" @click="handleLogin" value="Login" class="btn solid" />
           <p class="social-text">Or Sign in with social platforms</p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -102,12 +102,19 @@
 <script>
 
 import {reactive} from "vue";
+import axios from 'axios'
+import global from '../global'
+import router from "../router/index.js";
 
 
 export default {
   data() {
     return {
       signUpMode: false,
+      loginData: {
+        username : null,
+        password : null
+      },
     };
   },
   methods: {
@@ -117,7 +124,63 @@ export default {
     signIn() {
       this.signUpMode = false;
     },
+
+    handleLogin() {
+      let user = {
+        username: this.loginData.username,
+        password: this.loginData.password
+      }
+      // console.log(user)
+      let url = global.HOST_URL+"/user/login";
+      axios.post(url,user).then(
+          res => {
+            res = res.data;
+            if(res.code === 200){
+                console.log(res.data)
+                this.$notify({
+                  type: 'success',
+                  message: '登录成功',
+                  duration: 1000
+                });
+                this.$store.commit('login', res.data.token);
+                setTimeout(()=>{router.push('/');},700);
+            }else{
+              this.$notify({
+                type: 'warning',
+                message: '用户名或密码错误',
+                duration: 2000
+              });
+            }
+          }
+      );
+    }
   },
+
+  handleRegister(){
+    let user = {
+      username: this.formData.username,
+      password: this.formData.password
+    };
+    let url = global.HOST_URL+"/user/register";
+    axios.post(url,user).then(
+        res => {
+          res = res.data;
+          if(res.code === 0){
+            this.$notify({
+              type: 'success',
+              message: '注册成功'
+            });
+          }else{
+            this.$notify({
+              type: 'warning',
+              message: res.msg,
+              duration: 700
+            });
+          }
+        }
+    );
+
+  }
 };
 </script>
 
