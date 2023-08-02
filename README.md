@@ -7,7 +7,7 @@
 
 ### 效果展示
 
-<img src="D:\admin_login\img\登陆页面.png" style="zoom:75%;" />
+<img src=".\img\登陆页面.png" style="zoom:75%;" />
 
 ### 代码运行
 
