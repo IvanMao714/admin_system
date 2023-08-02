@@ -89,6 +89,9 @@ public class LoginServiceImpl implements LoginService {
     public ResponseResult register(String username, String password, String email) {
         Date date = new Date(System.currentTimeMillis());
         password = passwordEncoder.encode(password);
+        if (userMapper.findByUsername(username) != null){
+            return new ResponseResult(403, "用户已存在");
+        }
         userMapper.insertUser(username, password, email, date, '1');
         return new ResponseResult(200, "注册成功");
     }

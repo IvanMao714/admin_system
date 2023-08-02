@@ -37,7 +37,6 @@ public class LoginController {
     @PostMapping("/register")
     @CrossOrigin(origins = {"*"})
     public ResponseResult register(@RequestBody User user){
-        System.out.println(11111);
         return loginService.register(user.getUsername(), user.getPassword(), user.getEmail());
     }
 

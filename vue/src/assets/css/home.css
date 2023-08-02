@@ -1,0 +1,15 @@
+.home-layout{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.header-container{
+    background-color: #2d3a4b;
+}
+
+.aside-container{
+    background-color: #2d3a4b;
+    height: 100%;
+}

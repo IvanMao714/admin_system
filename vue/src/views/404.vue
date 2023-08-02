@@ -2,7 +2,7 @@
   <div>
     <div class="app-container">
       <el-col :span="12">
-        <img src="../assets/img/404.png" alt="404" class="img-style">
+        <img src="../../public/img/404.png" alt="404" class="img-style">
       </el-col>
       <el-col :span="12">
         <div style="margin-left: 100px;margin-top: 60px">

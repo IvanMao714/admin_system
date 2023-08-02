@@ -41,15 +41,15 @@
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" v-model="registerData.username" placeholder="Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" v-model="registerData.email" placeholder="Email" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" v-model="registerData.password" placeholder="Password" />
           </div>
           <input type="submit" class="btn" value="Sign up" />
           <p class="social-text">Or Sign up with social platforms</p>
@@ -115,6 +115,11 @@ export default {
         username : null,
         password : null
       },
+      registerData:{
+        email: null,
+        username: null,
+        password: null
+      }
     };
   },
   methods: {
@@ -158,14 +163,15 @@ export default {
 
   handleRegister(){
     let user = {
-      username: this.formData.username,
-      password: this.formData.password
+      username: this.registerData.username,
+      password: this.registerData.password,
+      email: this.registerData.email
     };
     let url = global.HOST_URL+"/user/register";
     axios.post(url,user).then(
         res => {
           res = res.data;
-          if(res.code === 0){
+          if(res.code === 200){
             this.$notify({
               type: 'success',
               message: '注册成功'
