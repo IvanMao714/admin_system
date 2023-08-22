@@ -1,18 +1,18 @@
 spring:
   datasource:
-    url: jdbc:mysql://8.219.62.112:3306/admin_login?useUnicode=true
-    username: root
-    password: Mao120714
+    url:
+    username: 
+    password: 
     driver-class-name: com.mysql.cj.jdbc.Driver
   security:
     user:
-      name: ivan
-      password: 123456
-      roles: admin
+      name: 
+      password: 
+      roles:
   redis:
-    host: 8.219.62.112
-    port: 6379
-    password: 120714
+    host: 
+    port: 
+    password: 
     timeout: 5000
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
