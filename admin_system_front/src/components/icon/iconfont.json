@@ -1,0 +1,58 @@
+{
+  "id": "4218424",
+  "name": "admin_system",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1555785",
+      "name": "code",
+      "font_class": "code",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "9924916",
+      "name": "history",
+      "font_class": "history",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "9927133",
+      "name": "list",
+      "font_class": "list",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "9978102",
+      "name": "用户管理",
+      "font_class": "setting",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "9996765",
+      "name": "设置",
+      "font_class": "setting1",
+      "unicode": "e6ec",
+      "unicode_decimal": 59116
+    },
+    {
+      "icon_id": "9997074",
+      "name": "主页",
+      "font_class": "home",
+      "unicode": "e6f9",
+      "unicode_decimal": 59129
+    },
+    {
+      "icon_id": "22612649",
+      "name": "生产日志管理",
+      "font_class": "shengchanrizhiguanli",
+      "unicode": "e9e9",
+      "unicode_decimal": 59881
+    }
+  ]
+}
