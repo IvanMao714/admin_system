@@ -1,8 +1,8 @@
 package com.gsiv.springboot.service;
 
-import com.gsiv.springboot.entity.Menu;
+import com.gsiv.springboot.entity.base.Menu;
 import com.gsiv.springboot.mapper.MenuMapper;
-import com.gsiv.springboot.service.impl.MenuServiceImpl;
+import com.gsiv.springboot.service.base.impl.MenuServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

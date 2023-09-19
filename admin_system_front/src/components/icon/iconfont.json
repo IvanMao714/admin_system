@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14887587",
+      "name": "ums-role",
+      "font_class": "ums-role",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "18406367",
+      "name": "笔记，记录",
+      "font_class": "bijijilu",
+      "unicode": "e6f3",
+      "unicode_decimal": 59123
+    },
+    {
       "icon_id": "1555785",
       "name": "code",
       "font_class": "code",

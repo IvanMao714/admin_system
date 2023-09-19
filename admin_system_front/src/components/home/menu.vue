@@ -52,7 +52,8 @@ export default {
   components: {HomeFilled,Menu},
   data() {
     return {
-      menuList: []
+      menuList: [],
+      user:null
     }
   },
 
@@ -62,7 +63,15 @@ export default {
 
   methods: {
     async init() { //获取菜单数据
-      this.menuList =  JSON.parse(localStorage.getItem('menuList'));
+      let token = sessionStorage.getItem('token');
+      let menuList = null;
+      await axios.get(global.HOST_URL + "/menu/list", {headers: {'token':token }}).then(
+          res => {
+            res = res.data;
+            menuList = res.data;
+          }
+      );
+      this.menuList = menuList;
     }
 
   }

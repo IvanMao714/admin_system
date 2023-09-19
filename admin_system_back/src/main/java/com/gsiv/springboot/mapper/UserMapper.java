@@ -1,13 +1,10 @@
 package com.gsiv.springboot.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.gsiv.springboot.entity.User;
+import com.gsiv.springboot.entity.base.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-
-import java.util.Date;
-import java.util.List;
 
 @Mapper
 public interface UserMapper extends BaseMapper<User> {

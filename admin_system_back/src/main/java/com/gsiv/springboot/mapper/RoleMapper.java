@@ -1,8 +1,10 @@
 package com.gsiv.springboot.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.gsiv.springboot.entity.Role;
+import com.gsiv.springboot.entity.base.Role;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @projectName: admin_system_back
@@ -15,5 +17,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface RoleMapper extends BaseMapper<Role> {
-
+    List<Role> selectRolesByUserId(Long id);
 }

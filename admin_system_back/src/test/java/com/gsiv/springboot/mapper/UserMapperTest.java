@@ -1,6 +1,6 @@
 package com.gsiv.springboot.mapper;
 
-import com.gsiv.springboot.entity.User;
+import com.gsiv.springboot.entity.base.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,9 +37,13 @@ public class UserMapperTest {
 
     @Test
     void insertUserTest(){
-        Date date = new Date(System.currentTimeMillis());
-        User user = new User();
-        userMapper.insert(user);
+        for(int i =0; i<10; i++){
+            Date date = new Date(System.currentTimeMillis());
+            User user = new User();
+            user.setUserName("test");
+            userMapper.insert(user);
+        }
+
 
     }
 

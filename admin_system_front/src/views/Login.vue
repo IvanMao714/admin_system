@@ -104,7 +104,7 @@
 import axios from 'axios'
 import global from '../global'
 import router from "../router/index.js";
-
+import Cookies from "js-cookie";
 
 export default {
   data() {
@@ -140,14 +140,13 @@ export default {
           res => {
             res = res.data;
             if(res.code === 200){
-                console.log(res.data)
+                // console.log(res.data)
                 this.$notify({
                   type: 'success',
                   message: '登录成功',
                   duration: 1000
                 });
-                this.$store.commit('login', res.data.token);
-                this.$store.commit('SET_MENU_LIST', res.data.menuList);
+                this.$store.commit('setToken', res.data.token);
                 setTimeout(()=>{router.push('/');},700);
             }else{
               this.$notify({
@@ -162,7 +161,7 @@ export default {
 
     handleRegister(){
       let user = {
-        username: this.registerData.username,
+        userName: this.registerData.username,
         password: this.registerData.password,
         email: this.registerData.email
       };
