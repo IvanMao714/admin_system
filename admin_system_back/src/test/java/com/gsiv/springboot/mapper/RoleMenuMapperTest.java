@@ -1,6 +1,6 @@
 package com.gsiv.springboot.mapper;
 
-import com.gsiv.springboot.entity.RoleMenu;
+import com.gsiv.springboot.entity.base.RoleMenu;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,7 +23,7 @@ public class RoleMenuMapperTest {
     @Test
     void insertTset(){
         RoleMenu roleMenu = new RoleMenu();
-        roleMenu.setMenuId(1693798150139113473L);
+        roleMenu.setMenuId(1695800854222753793L);
         roleMenu.setRoleId(1690404290570604546l);
         roleMenuMapper.insert(roleMenu);
     }

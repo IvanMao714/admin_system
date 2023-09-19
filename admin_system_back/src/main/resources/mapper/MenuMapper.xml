@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gsiv.springboot.mapper.MenuMapper">
 
-    <resultMap id="BaseResultMap" type="com.gsiv.springboot.entity.Menu">
+    <resultMap id="BaseResultMap" type="com.gsiv.springboot.entity.base.Menu">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="menuName" column="menu_name" jdbcType="VARCHAR"/>
             <result property="routePath" column="route_path" jdbcType="VARCHAR"/>
@@ -43,6 +43,20 @@
                 LEFT JOIN `T_MENU` AS m ON m.`id` = rm.`menu_id`
         WHERE
           user_id = #{id}
+          AND r.`status` = 0
+          AND m.`status` = 0
+    </select>
+
+    <select id="selectPermsByUserId" resultType="java.lang.String">
+        SELECT
+            DISTINCT m.`perms`
+        FROM
+            T_USER_ROLE ur
+                LEFT JOIN `T_ROLE` AS r ON ur.`role_id` = r.`id`
+                LEFT JOIN `T_ROLE_MENU` AS rm ON ur.`role_id` = rm.`role_id`
+                LEFT JOIN `T_MENU` AS m ON m.`id` = rm.`menu_id`
+        WHERE
+            user_id = #{userid}
           AND r.`status` = 0
           AND m.`status` = 0
     </select>

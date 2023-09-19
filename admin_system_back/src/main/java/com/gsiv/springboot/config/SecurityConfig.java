@@ -2,7 +2,6 @@ package com.gsiv.springboot.config;
 
 
 import com.gsiv.springboot.filter.JwtAuthenticationTokenFilter;
-import com.gsiv.springboot.handler.LoginSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,15 +32,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String URL_WHITELIST[] = {
         "/user/login",
         "/user/register",
-        "/menu",
-        "/user/list"
+//        "/menu/list",
+//        "/user/list"
     };
 
     @Autowired
     JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
-
-    @Autowired
-    private LoginSuccessHandler successHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -59,14 +55,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated()
                 ;
-//                .and()
-//                .formLogin()
-////                .loginPage("/user/login")
-////                .loginProcessingUrl("/user/login")
-//                .successHandler(successHandler);
 
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
 //        http.addFilterAfter(AuthenticationSuccessFilter,UsernamePasswordAuthenticationFilter.class)
+        //允许跨域
+        http.cors();
     }
 
     @Bean

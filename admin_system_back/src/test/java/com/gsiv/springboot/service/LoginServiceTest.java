@@ -1,7 +1,6 @@
 package com.gsiv.springboot.service;
 
 import com.gsiv.springboot.domin.ResponseResult;
-import com.gsiv.springboot.service.impl.LoginServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

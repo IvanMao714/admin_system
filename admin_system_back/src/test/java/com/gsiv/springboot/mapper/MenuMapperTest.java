@@ -1,6 +1,6 @@
 package com.gsiv.springboot.mapper;
 
-import com.gsiv.springboot.entity.Menu;
+import com.gsiv.springboot.entity.base.Menu;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,13 +21,13 @@ public class MenuMapperTest {
     @Test
     void InsertTest(){
         Menu menu = new Menu();
-        menu.setMenuName("用户管理");
-        menu.setIcon("icon-setting");
+        menu.setMenuName("菜单管理");
+        menu.setIcon("icon-list");
         menu.setStatus("0");
         menu.setParentId(1690655788755935234L);
         menu.setOrderNum(9999);
         menu.setMenuType("C");
-        menu.setRoutePath("/adminTime");
+        menu.setRoutePath("/adminMenu");
         menu.setParentId(0L);
         menuMapper.insert(menu);
 

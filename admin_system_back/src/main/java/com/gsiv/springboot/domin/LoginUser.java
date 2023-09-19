@@ -1,7 +1,7 @@
 package com.gsiv.springboot.domin;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.gsiv.springboot.entity.User;
+import com.gsiv.springboot.entity.base.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,27 +28,31 @@ public class LoginUser implements UserDetails {
 
     private User user;
 
-    private List<Long> permission;
+    //存储权限信息
+    private List<String> permissions;
 
+    //存储SpringSecurity所需要的权限信息的集合
     @JSONField(serialize = false)
     private List<GrantedAuthority> authorities;
 
-    public LoginUser(User user, List<Long> permission){
+    public LoginUser(User user,List<String> permissions) {
         this.user = user;
-        this.permission = permission;
+        this.permissions = permissions;
     }
 
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        //把permissions中String类型的权限信息封装成SimpleGrantedAuthority对象
-//        if(authorities!=null){
-//            return authorities;
-//        }
-//        authorities = permission.stream().
-//                map(SimpleGrantedAuthority::new)
-//                .collect(Collectors.toList());
-//        return authorities;
-//    }
+
+
+    @Override
+    public  Collection<? extends GrantedAuthority> getAuthorities() {
+        if(authorities!=null){
+            return authorities;
+        }
+        //把permissions中字符串类型的权限信息转换成GrantedAuthority对象存入authorities中
+        authorities = this.permissions.stream().
+                map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+        return authorities;
+    }
 
     @Override
     public String getPassword() {

@@ -6,24 +6,12 @@ import App from "./App.vue";
 import router from './router';
 import store from './store'
 import './components/icon/iconfont.css'
+import Vuex from "vuex";
 
 const app = createApp(App)
 app.use(ElementPlus)
 app.use(router)
 app.use(store)
+app.use(Vuex)
 app.mount("#app");
 
-
-
-// Vue.use(ElementPlus)
-// Vue.use(VCharts)
-
-// Vue.config.productionTip = false
-//
-// new Vue({
-//     el: '#app',
-//     router,
-//     store,
-//     template: '<App/>',
-//     components: { App }
-// })

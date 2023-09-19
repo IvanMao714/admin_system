@@ -1,6 +1,6 @@
 package com.gsiv.springboot.mapper;
 
-import com.gsiv.springboot.entity.Role;
+import com.gsiv.springboot.entity.base.Role;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,6 +33,10 @@ public class RoleMapperTest {
 
 
         roleMapper.insert(role);
+    }
+    @Test
+    void selectRolesByUserIdTest(){
+        roleMapper.selectRolesByUserId(2L);
     }
 
 

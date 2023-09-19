@@ -1,10 +1,9 @@
 package com.gsiv.springboot.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.gsiv.springboot.entity.Menu;
+import com.gsiv.springboot.entity.base.Menu;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -29,6 +28,6 @@ public interface MenuMapper extends BaseMapper<Menu> {
 
     List<Long> selectMenuIdByUserId(Long id);
 
-
+    List<String> selectPermsByUserId(Long id);
 
 }
