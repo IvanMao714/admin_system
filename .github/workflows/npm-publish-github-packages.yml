@@ -13,24 +13,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Deploy
-        uses: appleboy/ssh-action@master
+      - name: Build
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.RASPBERRY_PI_HOST}}
+#          username: ${{ secrets.RASPBERRY_PI_USER }}
+#          password: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
+#          port: ${{ secrets.RASPBERRY_PI_PORT }}
+#          script:
+#            steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js Build
+        uses: actions/setup-node@v3
         with:
-          host: ${{ secrets.RASPBERRY_PI_HOST}}
-          username: ${{ secrets.RASPBERRY_PI_USER }}
-          password: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
-          port: ${{ secrets.RASPBERRY_PI_PORT }}
-          script:
-            steps:
-            - uses: actions/checkout@v3
-            - name: Use Node.js Build
-              uses: actions/setup-node@v3
-              with:
-                node-version: 16.16.0
-                cache: 'npm'
-            - run: npm install
-            - run: npm run build
-            - run: ls -l
+          node-version: 16.16.0
+          cache: 'npm'
+      - run: npm install
+      - run: npm run build
+      - run: ls -l
 
 #            cd /home/ivan/repostories/admin_system
 #            git pull origin:master
