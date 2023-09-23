@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url:
+    username: 
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    user:
+      name: 
+      password: 
+      roles:
+  redis:
+    host: 
+    port: 
+    password: 
+    timeout: 5000
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+server:
+  port: 80

@@ -42,12 +42,12 @@ public class NoteServiceImpl implements NoteService {
     @Value("${notesDir}")
     private String notesDir;
 
-//    @Autowired
-//    @Qualifier("userNoteCache")
-//    LoadingCache<UserNoteKey, String> userNoteCache;
-//
-//    @Autowired
-//    private FileService fileService;
+    @Autowired
+    @Qualifier("userNoteCache")
+    LoadingCache<UserNoteKey, String> userNoteCache;
+
+    @Autowired
+    private FileService fileService;
 
     private String getUserid(){
         return ThreadLocalUtil.getUserid();
@@ -162,20 +162,20 @@ public class NoteServiceImpl implements NoteService {
 //        return res;
 //
 //    }
-//    @Override
-//    public String getNote(String notebookName, String noteTitle){
-//        return getNote(notebookName, noteTitle, getUsername());
-////        return getNote(notebookName, noteTitle);
-//    }
+    @Override
+    public String getNote(String notebookName, String noteTitle){
+        return getNote(notebookName, noteTitle, getUserid());
+//        return getNote(notebookName, noteTitle);
+    }
 
-//    @Override
-//    public String getNote(String notebookName, String noteTitle, String username) {
-//        String content = userNoteCache.get(buildUserNoteKey(notebookName, noteTitle, username));
-//        if (content == null){
-//            return "读取笔记失败";
-//        }
-//        return content;
-//    }
+    @Override
+    public String getNote(String notebookName, String noteTitle, String userid) {
+        String content = userNoteCache.get(buildUserNoteKey(notebookName, noteTitle, userid));
+        if (content == null){
+            return "读取笔记失败";
+        }
+        return content;
+    }
 
 
 
@@ -254,6 +254,5 @@ public class NoteServiceImpl implements NoteService {
     private UserNoteKey buildUserNoteKey(String notebookName, String noteTitle, String username){
         return new UserNoteKey().setNotebookName(notebookName).setNoteTitle(noteTitle).setUsername(username);
     }
-
 
 }

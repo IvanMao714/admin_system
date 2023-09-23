@@ -83,8 +83,8 @@ public class NoteController {
       *@Author: Ivan Mao
       *@Date:  2023.09.04
      **/
-//    @GetMapping("/{notebookName}/{noteTitle}")
-//    public ResponseResult getNote(@PathVariable String notebookName, @PathVariable String noteTitle){
-//        return new ResponseResult(200, noteService.getNote(notebookName, noteTitle));
-//    }
+    @GetMapping("/{notebookName}/{noteTitle}")
+    public ResponseResult getNote(@PathVariable String notebookName, @PathVariable String noteTitle){
+        return new ResponseResult(200, noteService.getNote(notebookName, noteTitle));
+    }
 }

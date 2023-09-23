@@ -24,6 +24,6 @@ public interface NoteService {
 
     public void renameNotebook(String srcNotebookName, String targetNotebookName);
 
-//    public String getNote(String notebookName, String noteTitle);
-//    public String getNote(String notebookName, String noteTitle, String username);
+    public String getNote(String notebookName, String noteTitle);
+    public String getNote(String notebookName, String noteTitle, String username);
 }
