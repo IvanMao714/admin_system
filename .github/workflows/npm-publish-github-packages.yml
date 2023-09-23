@@ -21,8 +21,19 @@ jobs:
           password: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
           port: ${{ secrets.RASPBERRY_PI_PORT }}
           script:
-            cd /home/ivan/repostories/admin_system
-            git pull origin:master
-            cd admin_system_front
-            npm install
-            npm run dev
+            steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js Build
+              uses: actions/setup-node@v3
+              with:
+                node-version: 16.16.0
+                cache: 'npm'
+            - run: npm install
+            - run: npm run build
+            - run: ls -l
+
+#            cd /home/ivan/repostories/admin_system
+#            git pull origin:master
+#            cd admin_system_front
+#            npm install
+#            npm run dev
