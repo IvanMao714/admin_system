@@ -15,6 +15,7 @@ jobs:
 
       - name: Build
         uses: actions/setup-node@master
+      - run: cd admin_system_front
       - run: npm install
       - run: npm run build
 #        uses: appleboy/ssh-action@master
