@@ -22,15 +22,15 @@ jobs:
 #          port: ${{ secrets.RASPBERRY_PI_PORT }}
 #          script:
 #            steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js Build
-        uses: actions/setup-node@v3
+#      - uses: actions/checkout@v3
+#      - name: Use Node.js Build
+        uses: actions/setup-node@master
         with:
           node-version: 16.16.0
           cache: 'npm'
-      - run: npm install
-      - run: npm run build
-      - run: ls -l
+#      - run: npm install
+#      - run: npm run build
+#      - run: ls -l
 
 #            cd /home/ivan/repostories/admin_system
 #            git pull origin:master
