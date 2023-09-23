@@ -14,6 +14,9 @@ jobs:
         uses: actions/checkout@master
 
       - name: Build
+        uses: actions/setup-node@master
+      - run: npm install
+      - run: npm run build
 #        uses: appleboy/ssh-action@master
 #        with:
 #          host: ${{ secrets.RASPBERRY_PI_HOST}}
@@ -24,10 +27,7 @@ jobs:
 #            steps:
 #      - uses: actions/checkout@v3
 #      - name: Use Node.js Build
-        uses: actions/setup-node@master
-        with:
-          node-version: 16.16.0
-          cache: 'npm'
+
 #      - run: npm install
 #      - run: npm run build
 #      - run: ls -l
