@@ -25,7 +25,7 @@ jobs:
         with:
           host: ${{ secrets.RASPBERRY_PI_HOST}}
           username: ${{ secrets.RASPBERRY_PI_USER }}
-          password: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
+          password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
           source: "./dist/*"
           target: /home/ivan/deploy/admin_system_front/dist
 #      - name: Deploy
