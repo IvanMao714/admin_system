@@ -21,7 +21,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        cd admin_system_front
+        cd admin_system_back
         mvn -B package --file pom.xml
         ls -l
 
