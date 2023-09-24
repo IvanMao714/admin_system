@@ -23,7 +23,7 @@ jobs:
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
           host: ${{ secrets.RASPBERRY_PI_HOST}}
-          name: ${{ secrets.RASPBERRY_PI_USER }}
+          user: ${{ secrets.RASPBERRY_PI_USER }}
           pass: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
           port: ${{ secrets.RASPBERRY_PI_PORT }}
           scp: |
