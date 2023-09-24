@@ -15,10 +15,11 @@ jobs:
 
       - name: Build
         uses: actions/setup-node@master
-      - run: cd admin_system_front
-      - run: ls -l
-      - run: npm install
-      - run: npm run build
+      - run: |
+          cd admin_system_front
+          npm install
+          npm run build
+          ls -l
 #        uses: appleboy/ssh-action@master
 #        with:
 #          host: ${{ secrets.RASPBERRY_PI_HOST}}
