@@ -23,6 +23,7 @@ jobs:
       - name: local remote scp
 
         uses: cross-the-world/scp-pipeline@master
+        run: echo "${{ secrets.RASPBERRY_PI_HOST}}"
         with:
           host: ${{ secrets.RASPBERRY_PI_HOST}}
           user: ${{ secrets.RASPBERRY_PI_USER }}
