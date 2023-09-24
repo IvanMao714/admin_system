@@ -29,7 +29,7 @@ jobs:
           host: ${{ secrets.RASPBERRY_PI_HOST}}
           username: ${{ secrets.RASPBERRY_PI_USER }}
           password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
-          source: "./dist/*"
+          source: "admin_system_front/dist/*"
           target: /home/ivan/deploy/admin_system_front/dist
 #      - name: Deploy
 #        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
