@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.RASPBERRY_PI_USER }}
           password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
           source: "admin_system_front/dist/*"
-          target: /home/ivan/deploy/admin_system_front/dist
+          target: "/home/ivan/deploy/admin_system_front/dist"
 
       - name: Deploy
         uses: appleboy/ssh-action@master
@@ -40,38 +40,3 @@ jobs:
             nginx -s reload
             echo "finished !!!"
 
-#      - name: Deploy
-#        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
-#        env:
-#          LASTSSH: "Doing something after copying"
-#        with:
-#          host: ${{ secrets.RASPBERRY_PI_HOST}}
-#          user: ${{ secrets.RASPBERRY_PI_USER }}
-#          pass: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
-#          port: ${{ secrets.RASPBERRY_PI_PORT }}
-#          scp: |
-#            ./dist/* => /home/ivan/deploy/admin_system_front/dist
-#          last_ssh: |
-#            echo $LASTSSH
-#            nginx -t
-#            nginx -s reload
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: ${{ secrets.RASPBERRY_PI_HOST}}
-#          username: ${{ secrets.RASPBERRY_PI_USER }}
-#          password: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
-#          port: ${{ secrets.RASPBERRY_PI_PORT }}
-#          script:
-#            steps:
-#      - uses: actions/checkout@v3
-#      - name: Use Node.js Build
-
-#      - run: npm install
-#      - run: npm run build
-#      - run: ls -l
-
-#            cd /home/ivan/repostories/admin_system
-#            git pull origin:master
-#            cd admin_system_front
-#            npm install
-#            npm run dev
