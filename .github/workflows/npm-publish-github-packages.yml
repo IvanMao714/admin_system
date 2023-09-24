@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.RASPBERRY_PI_USER }}
           password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
           source: "admin_system_front/dist/*"
-          target: "/home/ivan/deploy/admin_system_front/dist"
+          target: "/home/ivan/deploy/admin_system_front/"
 
       - name: Deploy
         uses: appleboy/ssh-action@master
