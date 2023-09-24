@@ -21,6 +21,7 @@ jobs:
           npm run build
 
       - name: local remote scp
+
         uses: cross-the-world/scp-pipeline@master
         with:
           host: ${{ secrets.RASPBERRY_PI_HOST}}
