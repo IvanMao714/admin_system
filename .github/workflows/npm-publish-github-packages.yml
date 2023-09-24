@@ -23,7 +23,7 @@ jobs:
       - name: View directory files
         run: ls -a # 查看打包后的目录文件
 
-      - name: Local remote scp
+      - name: Deploy
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.RASPBERRY_PI_HOST}}
@@ -31,6 +31,11 @@ jobs:
           password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
           source: "admin_system_front/dist/*"
           target: /home/ivan/deploy/admin_system_front/dist
+          script: |
+            nginx -t
+            nginx -s reload
+            echo "finished !!!"
+
 #      - name: Deploy
 #        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
 #        env:
