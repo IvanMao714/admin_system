@@ -20,14 +20,22 @@ jobs:
           npm install
           npm run build
 
-      - name: local remote scp
-        uses: cross-the-world/scp-pipeline@master
+      - name: Local remote scp
+      - uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.RASPBERRY_PI_HOST}}
-          user: ${{ secrets.RASPBERRY_PI_USER }}
-          pass: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
-          local: "./dist/*"
-          remote: /home/ivan/deploy/admin_system_front/dist
+          host: ${{ secrets.RASPBERRY_PI_HOST}} # 服务器host
+          username: ${{ secrets.RASPBERRY_PI_USER }} # 服务器用户名
+          password: ${{ secrets.RASPBERRY_PI_PASSSWORD }} # 服务器密码
+          source: "./dist/*" # 需要上传的文件, 多文件使用逗号隔开
+          target: '/home/ivan/deploy/admin_system_front/dist' # 上传到服务器的什么位置
+
+#        uses: cross-the-world/scp-pipeline@master
+#        with:
+#          host: ${{ secrets.RASPBERRY_PI_HOST}}
+#          user: ${{ secrets.RASPBERRY_PI_USER }}
+#          pass: ${{ secrets.RASPBERRY_PI_PASSSWORD }}
+#          local: "./dist/*"
+#          remote: /home/ivan/deploy/admin_system_front/dist
 #      - name: Deploy
 #        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
 #        env:
