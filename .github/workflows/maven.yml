@@ -36,13 +36,10 @@ jobs:
         source: "admin_system_back/target/admin_system_back-0.0.1-SNAPSHOT.jar"
         target: "/home/ivan/deploy/"
 
-    - name: Deploy
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.RASPBERRY_PI_HOST}}
-        username: ${{ secrets.RASPBERRY_PI_USER }}
-        password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
-        script: |
-          nginx -t
-          nginx -s reload
-          echo "finished !!!"
+#    - name: Deploy
+#      uses: appleboy/ssh-action@master
+#      with:
+#        host: ${{ secrets.RASPBERRY_PI_HOST}}
+#        username: ${{ secrets.RASPBERRY_PI_USER }}
+#        password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
+#        script: |
