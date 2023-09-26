@@ -23,7 +23,8 @@ jobs:
     - name: Build with Maven
       run: |
         cd admin_system_back
-        mvn -B package --file pom.xml
+        mvn clean install -U
+        mvn clean package --file pom.xml
         ls -l
 
     - name: Scp jar
