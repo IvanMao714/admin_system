@@ -1,4 +1,4 @@
-name: Raspberry PI Deployment
+name: Raspberry PI Deployment Frontend
 
 on:
   push:
