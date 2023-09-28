@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@master
       - run: |
           cd admin_system_front
+          npm cache clean
           npm install
           npm run build
 

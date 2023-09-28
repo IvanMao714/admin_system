@@ -44,4 +44,4 @@ jobs:
         password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
         script: |
           screen -r  788794
-          java -jar /home/ivan/deploy/admin_system_back/target/admin_system_back-0.0.1-SNAPSHOT.jar -Dspring.config.location=/home/ivan/deploy/admin_system_back/target/application.yml /home/ivan/deploy/admin_system_back/target/admin_back.txt 2>&1 &
+          java -jar /home/ivan/deploy/admin_system_back/target/admin_system_back-0.0.1-SNAPSHOT.jar --spring.config.location=/home/ivan/deploy/admin_system_back/target/application.yml /home/ivan/deploy/admin_system_back/target/admin_back.txt 2>&1 &
