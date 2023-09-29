@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.RASPBERRY_PI_USER }}
           password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
           script: |
-            nginx -t
-            nginx -s reload
+            sudo nginx -t
+            sudo nginx -s reload
             echo "finished !!!"
 
