@@ -30,8 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private static final String URL_WHITELIST[] = {
-        "/user/login",
-        "/user/register",
+        "/api/user/login",
+        "/api/user/register",
 //        "/menu/list",
 //        "/user/list"
     };

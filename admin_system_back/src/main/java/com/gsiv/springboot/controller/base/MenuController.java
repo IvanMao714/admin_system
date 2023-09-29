@@ -23,7 +23,7 @@ import java.util.List;
  * @version: 1.0
  */
 @RestController
-@RequestMapping("/menu")
+@RequestMapping("/api/menu")
 @Slf4j
 public class MenuController {
 

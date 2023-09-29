@@ -28,7 +28,7 @@ import java.util.*;
  * @version: 1.0
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 @Slf4j
 public class UserController {
 
